@@ -215,7 +215,13 @@
 }
 
 .port_disc {
+  width: 80%;
   margin-bottom: 12px;
+  font-size: 16px;
+}
+
+img+.port_disc {
+  margin-top: 8px;
 }
 
 .port_list {
@@ -245,8 +251,16 @@
   vertical-align: top;
 }
 
-.port_img+.port_img {
+.port_img {
   margin-left: 3%;
+}
+
+.port_img:first-of-type {
+  margin-left: 0;
+}
+
+.port_img:nth-of-type(2n+1) {
+  margin-left: 0;
 }
 
 .port_img.w-50 {
@@ -274,6 +288,11 @@
 
   .port_img+.port_img {
     margin-left: 0;
+  }
+
+  .port_disc {
+    width: 100%;
+    font-size: 14px;
   }
 
 }
