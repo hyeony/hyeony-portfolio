@@ -38,9 +38,9 @@ h1,h2,h3,h4,h5,h6,strong,th {
   font-weight: normal;
 }
 
-body,button,input,select,table,textarea {
+html,body,button,input,select,table,textarea {
   font-family: "NotoSans",sans-serif, "돋움", Dotum, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   color: #111;
   letter-spacing: -0.08px;
 }
