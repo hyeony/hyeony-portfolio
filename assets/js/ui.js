@@ -28,7 +28,38 @@ $(document).ready(function () {
 
   //scrollMagic Animation
   var controller = new ScrollMagic.Controller();
+  //kv
+  if ($('.landing_kv').length > 0) {
+    $('.landing_kv').each(function () {
+      var ourScene = new ScrollMagic.Scene({
+          triggerElement: this.children[0],
+          triggerHook: 0.9,
+        })
+        .setClassToggle(this, 'is-active')
+        .addTo(controller);
+    });
+  }
 
+  //kv textcolor
+  if ($('.landing_title').length > 0) {
+    $('.landing_letter').each(function () {
+
+      var letter = $('.landing_letter');
+
+      var textColor = new TimelineMax()
+      .add(TweenMax.to(letter, 1, {color: "rgba(255,255,255,0.8)"}))
+
+      new ScrollMagic.Scene({
+        triggerHook: 1,
+        triggerElement: letter,
+        duration: 200
+      })
+      .setTween(textColor)
+      .addTo(controller);
+    });
+  }
+
+  
   //my
   if ($('.my_wrap_con').length > 0) {
     $('.my_wrap_con').each(function () {
