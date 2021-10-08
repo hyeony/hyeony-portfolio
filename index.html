@@ -24,9 +24,12 @@
   </header>
   <div class="landing">
     <div class="inner">
-      <div class="landing_title">
+      <!-- <div class="landing_title">
         안녕하세요<br>
         마크업 개발을 하고 있는 <strong>김지현</strong>입니다 :)
+      </div> -->
+      <div class="landing_kv">
+
       </div>
     </div>
   </div>
@@ -101,7 +104,7 @@
       <div class="work_intro">
         <h2>WORK</h2>
         <p class="work_intro_sub">그동안 진행했던 프로젝트를 최신순으로 정리했습니다.</p>
-      </div>>
+      </div>
       <!-- <p class="work_disc">
         금융위원회 산하, 금융규제 샌드박스 페이지 구축
       </p> -->
@@ -164,5 +167,18 @@
 <script src="assets/js/vendor/ScrollMagic.min.js"></script>
 <script src="assets/js/vendor/gsap.min.js"></script>
 <script src="assets/js/vendor/animation.gsap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="assets/js/vendor/hover-effect.umd.js"></script>
 <script src="assets/js/ui.js"></script>
+<script>
+  var hoverDistort = new hoverEffect({
+    parent: document.querySelector('.landing_kv'),
+    intensity: 0.5,
+    image1: 'assets/img/contents/jihyeon.jpeg',
+    image2: 'assets/img/contents/jihyeon_y.jpeg',
+    deplacementImage: 'https://cdn.rawgit.com/robin-dela/hover-effect/b6c6fd26/images/stripe1mul.png?raw=true'
+  });
+
+</script>
 </html>

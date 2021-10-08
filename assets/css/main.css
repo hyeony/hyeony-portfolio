@@ -130,6 +130,11 @@ body {
   font-weight: 700;
 }
 
+.landing_kv {
+  min-width: 800px;
+  min-height: 800px;
+}
+
 /* my wrap */
 .my_wrap_inner {
   max-width: 1360px;
