@@ -47,19 +47,34 @@ $(document).ready(function () {
       var letter = $('.landing_letter');
 
       var textColor = new TimelineMax()
-      .add(TweenMax.to(letter, 1, {color: "rgba(255,255,255,0.8)"}))
+        .add(TweenMax.to(letter, 1, {
+          color: "rgba(255,255,255,0.8)"
+        }));
 
       new ScrollMagic.Scene({
-        triggerHook: 1,
-        triggerElement: letter,
-        duration: 200
-      })
-      .setTween(textColor)
-      .addTo(controller);
+          triggerHook: 1,
+          triggerElement: letter,
+          duration: 200
+        })
+        .setTween(textColor)
+        .addTo(controller);
     });
   }
 
-  
+  // //kv letter
+  if ($('.landing_kv').length > 0) {
+    new ScrollMagic.Scene({
+        triggerHook: 0.7,
+        triggerElement: ".landing_kv",
+        duration: $(window).outerHeight()
+      })
+      .setTween(".landing_kv_letter", {
+        x: "-20%",
+        ease: Linear.easeNone
+      })
+      .addTo(controller);
+  }
+
   //my
   if ($('.my_wrap_con').length > 0) {
     $('.my_wrap_con').each(function () {
@@ -86,4 +101,29 @@ $(document).ready(function () {
       .addTo(controller);
   }
 
+  //about
+  if ($('.work_intro').length > 0) {
+    new ScrollMagic.Scene({
+        triggerHook: 0.7,
+        triggerElement: ".work_intro",
+        duration: $(window).outerHeight()
+      })
+      .setTween(".work_intro", {
+        y: "-30%",
+        ease: Linear.easeNone
+      })
+      .addTo(controller);
+  }
+
+  //my
+  if ($('.footer').length > 0) {
+    $('.footer_title').each(function () {
+      var ourScene = new ScrollMagic.Scene({
+          triggerElement: this.children[0],
+          triggerHook: 0.9,
+        })
+        .setClassToggle(this, 'is-active')
+        .addTo(controller);
+    });
+  }
 });
