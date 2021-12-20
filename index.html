@@ -4,27 +4,339 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>jihyeon's portfolio</title>
+  <title>jihyeon's </title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <style>
+    .body-wrapper {
+      position: relative;
+      will-change: transform;
+    }
+
+    .title {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 120px 0 20px;
+      z-index: 1;
+      transition: 0.3s;
+    }
+
+    .title-letter {
+      color: #fff;
+      font-size: 20em;
+      font-family: 'Faktum-Regular';
+      letter-spacing: -.08em;
+      text-transform: capitalize;
+    }
+
+    .title-letter:first-of-type {
+      margin-left: 1em;
+      line-height: .78;
+    }
+
+    .title-letter:last-of-type {
+      text-decoration: underline;
+    }
+
+    .title-letter:nth-of-type(2) {
+      margin-right: 2.2em;
+      text-align: right;
+      line-height: .78;
+    }
+
+    .full-cover {
+      position: relative;
+      padding-top: 115%;
+      overflow: hidden;
+    }
+
+    .full-cover-box {
+      position: absolute;
+      top: 0;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+    }
+
+    .full-cover-box-inner {
+      position: absolute;
+      top: 0;
+      left: 0%;
+    }
+
+    .cover {
+      position: relative;
+      padding-top: 50%;
+    }
+
+    .cover-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    .cover-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .cover-source {
+      display: block;
+      max-width: 50%;
+      margin: 0 auto;
+    }
+
+    .cover-source-wrap {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      padding-top: 45.333%;
+    }
+
+    .cover-source-title {
+      max-width: 50%;
+      margin: 16px auto 0;
+      font-size: 1.8rem;
+      color: #f0d6ca;
+      text-align: left;
+      font-family: 'Faktum-Regular';
+      text-transform: capitalize;
+    }
+
+    .content {
+      position: relative;
+      background-color: #f4f4fa;
+      font-family: 'Faktum-Regular';
+    }
+
+    .content-text.short {
+      padding: 60px 20px 120px;
+      font-size: 3.8rem;
+      text-transform: capitalize;
+    }
+
+    .content-text.short>p {
+      text-indent: 2rem;
+    }
+
+    .content2 {
+      margin: 120px 0 180px;
+      font-size: 1.5rem;
+    }
+
+    .img-box {
+      position: relative;
+      width: 100%;
+      padding-top: 70%;
+      overflow: hidden;
+    }
+
+    .img-box-deeper {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    [class*=c-row] {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .s-between {
+      justify-content: space-between;
+    }
+
+    .c-pic {
+    }
+
+    .pic-s {
+      flex-basis: 20%;
+      align-self: end;
+    }
+
+    .pic-m {
+      flex-basis: 60%;
+    }
+
+    .pic {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      will-change: transform;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .pic-inner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    .pImage {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 110%;
+      height: 110%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+    }
+  </style>
 </head>
 
 <body>
-  <header>
+  <div data-scroll-container class="body-wrapper">
+    <div class="title">
+      <div class="title-letter">TEAMS OF</div>
+      <div class="title-letter">INSPIRED </div>
+      <div class="title-letter">Goodkids</div>
+    </div>
+    <div class="full-cover">
+      <div class="full-cover-box">
 
-  </header>
+        <div class="cover-inner">
+          <div class="cover-source-box">
+            <img class="cover-img" src="assets/img/bg/bg_ny.jpg" alt="bg">
+          </div>
+        </div>
 
+        <div class="cover-inner">
+          <div class="cover-source-wrap">
+            <video class="cover-source" src="assets/img/bg/sky.mp4" autoplay muted loop="" playsinline="" preload="auto"
+              oncontextmenu="return false"></video>
+            <div class="cover-source-title">
+              Lorem, ipsum dolor sit amet Lorem, ipsum dolor sit amet
+              Lorem, ipsum dolor sit amet Lorem, ipsum dolor sit amet Lorem, ipsum dolor sit amet
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </div>
 
-  <footer>
+    <div class="content">
+      <div class="content-text short">
+        Grow through energy and collective emulation amet consectetur<br>
+        adipisicing elit collective
+        <p>
+          Grow through energy and collective emulation amet consectetur<br>
+          adipisicing elit collective through energy and collecti through energy and collecti h energy and colle ecti
+          through energy and collecti h energ.
+        </p>
+      </div>
 
-  </footer>
+      <div class="c-row s-between">
+
+        <div class="c-pic pic-s">
+          <div class="img-box">
+            <div class="img-box-deeper">
+              <div class="pic">
+                <img class="pImage" src="https://picsum.photos/1200/526?random=1" alt="Filler image">
+              </div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="c-pic pic-m">
+          <div class="img-box">
+            <div class="img-box-deeper">
+              <div class="pic">
+                <img class="pImage" src="assets/img/contents/con-1.jpg" alt="Filler image">
+              </div>
+            </div>
+            <p></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="content2">
+        Lorem, ipsum dolor sit amet<br>
+        Lorem, ipsum dolor sit amet Lorem, ipsum dolor sit amet Lorem, ipsum dolor sit amet<br>
+        Lorem, ipsum dolor sit amet Lorem, ipsum dolor sit amet Lorem, ipsum dolor sit amet
+      </div>
+
+      <div class="number">2019</div>
+    </div>
+  </div>
   <!-- script -->
   <script src="assets/js/vendor/jquery_3.4.0.min.js"></script>
   <script src="assets/js/vendor/ScrollMagic.min.js"></script>
   <script src="assets/js/vendor/gsap.min.js"></script>
   <script src="assets/js/vendor/animation.gsap.js"></script>
-  <script src="assets/js/vendor/hover-effect.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vendor/locomotive-scroll.min.js"></script>
   <script src="assets/js/ui.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".title", {
+      scrollTrigger: {
+        trigger: ".title",
+        start: "top",
+        // end: "top 100px",
+        scrub: true,
+        markers: true,
+      },
+      y: '-1%',
+      ease: "linear",
+      duration: 8
+    });
+
+    gsap.to(".full-cover .cover-source-box", {
+      scrollTrigger: {
+        trigger: ".title",
+        start: "-=200",
+        // end: "top 100px",
+        scrub: true,
+        markers: true,
+      },
+      y: '10%',
+      ease: 'circ',
+      duration: 20
+    });
+
+     gsap.to(".img-box-deeper", {
+      scrollTrigger: {
+        trigger: ".content-text short",
+        start: "top center",
+        scrub: true,
+        markers: true,
+      },
+      y: '15%',
+      ease: 'none',
+      duration: 3
+    });
+
+    /* locomotive */
+    // import LocomotiveScroll from 'locomotive-scroll';
+
+    const locoScroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+    });
+    locoScroll.setAttribute("data-scroll-speed", "0.5");
+
+    locoScroll.on('scroll', ScrollTrigger.update)
+  </script>
 </body>
 
 </html>

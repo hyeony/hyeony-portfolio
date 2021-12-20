@@ -29,6 +29,24 @@
     url('../font/NotoSansKR-Bold.otf') format('opentype');
 }
 
+@font-face {
+  font-family: 'Faktum-Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Faktum-Bold'),
+    url('../font/Faktum-Bold.woff2') format('woff2'),
+    url('../font/Faktum-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Faktum-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Faktum-Regular'),
+    url('../font/Faktum-Regular.woff2') format('woff2'),
+    url('../font/Faktum-Regular.otf') format('opentype');
+}
+
 body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,select,table,td,textarea,th,ul {
   margin: 0;
   padding: 0;
