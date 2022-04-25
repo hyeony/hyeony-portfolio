@@ -1,0 +1,67 @@
+.scroll-section {
+  position: relative;
+  padding-top: 50vh;
+  background-size: cover;
+  z-index: 1;
+  &:first-of-type{
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+/*hero*/
+.hero {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  z-index: 2;
+
+  .title {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Beaufort for LOL Bold';
+  }
+
+  &-message {
+    position: relative;
+    display: flex;
+    height: 3em;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+    .year {
+      font-size: 4em;
+      color: $riot-yellow;
+      font-family: 'Beaufort for LOL Bold';
+    }
+
+    .thanks,
+    .greeting {
+      color: #fff;
+    }
+  }
+}
+
+.hero-message {
+  opacity: 0;
+  top: 15vh;
+  width: 100%;
+}
+
+.sticky-elem {
+  display: none;
+  position: fixed;
+  left: 0;
+}
+
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem {
+  display: block;
+}
