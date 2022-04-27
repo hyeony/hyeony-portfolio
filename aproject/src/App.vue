@@ -103,7 +103,7 @@
         playerLevel: '',
         playerTier: '',
         unrankMessage: "언랭크",
-        apiKey : "RGAPI-36ff702e-fa33-412b-80b8-7401adc67e95",
+        apiKey :
         text: '', //출력될 값
         inputText:'', //input값
         sceneInfo: [
