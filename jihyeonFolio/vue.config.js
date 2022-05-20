@@ -12,7 +12,8 @@ module.exports = defineConfig({
         `
       }
     }
-  }
+  },
+  publicPath:'/jihyeonPortFolio',
 })
 
 
