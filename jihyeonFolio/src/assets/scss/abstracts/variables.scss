@@ -15,13 +15,3 @@ $input-text-active: #BFD2FF;
         background-position: 100% 0
     }
 }
-
-@keyframes pengu {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(0, 10%, 0);
-    }
-}

@@ -1,8 +1,42 @@
 <template>
+    <div class="bin"></div>
+    <div class="bin"></div>
+    <div class="bin"></div>
   <div>
-    <div class="box">
-      box1
-    </div>
+    <section class="middle">
+      <h1 class="middle-title">IPPP SSSS</h1>
+      <p class="">
+        the mall's special offers. <br> the mall's special offers.
+      </p>
+    </section>
+    <section class="bottom">
+      <div class="container">
+        <div class="list">
+          <div class="row">
+            <div class="item">
+              <a href="">
+                <div class="item-img one" ref="itemImage">
+                <img :src="require('@/assets/imgs/item_00.jpeg')" alt="">
+              </div>
+              </a>
+              <div>item 00</div>
+            </div>
+            <div class="item">
+              <a href="">
+                <div class="item-img two">
+                  <img :src="require('@/assets/imgs/item_01.jpeg')" alt="">
+                </div>
+              </a>
+              <div>item 01</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bin"></div>
+    <div class="bin"></div>
+    <div class="bin"></div>
+                <div class="bin"></div>
   </div>
 </template>
 
@@ -21,28 +55,57 @@
 
     },
     data() {
-
+      return {
+       listItem : [],
+      }
     },
 
     methods: {
+      heightChange(){
+
+   
+      //    const ItemWidth = this.$refs.itemImage.clientWidth
+         
+      //  this.$refs.itemImage.clientHeight = ItemWidth * 1.4
+
+
+
+      },
+
       //Timline animation
       scrollAnimation(){
         gsap.timeline({
           scrollTrigger: {
-            trigger: ".safe",
-            start: "-90%",
-            end: "-8% top",
-            markers: true,
+            trigger: ".middle",
+            start: "80% center",
+            end: "+=500px",
+            // markers: true,
             scrub: true,
+            pin: true,
           }
         })
-        .from(".section-head-typo",{ transform: "matrix(1.5, 0, 0, 1.5, 0, 0)" })
-        .from(".section-head-sub", { transform: "matrix(1, 0, 0, 1, 0, 50)", opacity:"0"})
+        .to(".middle-title",{ opacity: "0" })
+
 
         gsap.timeline({
-
+          scrollTrigger: {
+            trigger: ".item-img.one",
+            start: "top bottom",
+  
+            scrub: true,
+            markers: true,
+          }
         })
+        .from( ".item-img.one",{ height:"750px"})
+        .to( ".item-img.one",{ y:"0"})
+        // .from(".item-img.two",{x:0, y: "-750px"})
+
+  
       },
+    },
+    mounted(){
+      this.scrollAnimation();
+      this. heightChange();
     }
   }
 </script>
@@ -52,9 +115,11 @@
     margin: 0;
   }
 
-  .box {
-    width: 50px;
-    height: 50px;
-    border: 1px solid red;
+  * {
+    box-sizing: border-box;
+  }
+
+  .bin {
+    height: 50vh;
   }
 </style>
