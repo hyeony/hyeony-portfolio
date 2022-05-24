@@ -5,7 +5,7 @@
   <div>
     <section class="middle">
       <h1 class="middle-title">IPPP SSSS</h1>
-      <p class="">
+      <p class="middle-copy">
         the mall's special offers. <br> the mall's special offers.
       </p>
     </section>
@@ -15,7 +15,7 @@
           <div class="row">
             <div class="item">
               <a href="">
-                <div class="item-img one" ref="itemImage">
+                <div class="item-img one" :ref="itemImage">
                 <img :src="require('@/assets/imgs/item_00.jpeg')" alt="">
               </div>
               </a>
@@ -23,11 +23,19 @@
             </div>
             <div class="item">
               <a href="">
-                <div class="item-img two">
+                <div class="item-img two" :ref="itemImage">
                   <img :src="require('@/assets/imgs/item_01.jpeg')" alt="">
                 </div>
               </a>
               <div>item 01</div>
+            </div>
+            <div class="item">
+              <a href="">
+                <div class="item-img three" :ref="itemImage">
+                <img :src="require('@/assets/imgs/item_00.jpeg')" alt="">
+              </div>
+              </a>
+              <div>item 03</div>
             </div>
           </div>
         </div>
@@ -36,7 +44,7 @@
     <div class="bin"></div>
     <div class="bin"></div>
     <div class="bin"></div>
-                <div class="bin"></div>
+    <div class="bin"></div>
   </div>
 </template>
 
@@ -48,7 +56,7 @@
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin)
 
 
- 
+
   export default {
     name: 'portFolio',
     components: {
@@ -56,20 +64,18 @@
     },
     data() {
       return {
-       listItem : [],
+       itemRefs : [],
       }
     },
 
     methods: {
       heightChange(){
-
-   
       //    const ItemWidth = this.$refs.itemImage.clientWidth
-         
       //  this.$refs.itemImage.clientHeight = ItemWidth * 1.4
+      },
 
-
-
+      itemImage(el){
+        this.itemRefs.push(el)
       },
 
       //Timline animation
@@ -78,34 +84,64 @@
           scrollTrigger: {
             trigger: ".middle",
             start: "80% center",
-            end: "+=500px",
-            // markers: true,
+            endTrigger: ".bottom",
+            end: "+=700px",
+            markers: true,
             scrub: true,
             pin: true,
+            pinSpacing: false
           }
         })
         .to(".middle-title",{ opacity: "0" })
-
+        .to(".middle-copy",{ opacity: "0" })
 
         gsap.timeline({
           scrollTrigger: {
             trigger: ".item-img.one",
             start: "top bottom",
-  
             scrub: true,
-            markers: true,
+            // markers: true,
           }
         })
-        .from( ".item-img.one",{ height:"750px"})
-        .to( ".item-img.one",{ y:"0"})
-        // .from(".item-img.two",{x:0, y: "-750px"})
+        .to(".item-img.one",{ y:"0", ease: "none"})
 
-  
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".item-img.two",
+            start: "top bottom",
+            scrub: true,
+            // markers: true,
+          }
+        })
+        .to(".item-img.two",{ y:"0", ease: "none"})
+
+        gsap.timeline({
+          scrollTrigger: {
+            trigger: ".item-img.three",
+            start: "top bottom",
+            scrub: true,
+            // markers: true,
+          }
+        })
+        .to(".item-img.three",{ y:"0", ease: "none"})
+
+
       },
+
+    },
+    beforeUpdate(){
+      this.itemRefs = []
+    },
+    updated(){
+
     },
     mounted(){
       this.scrollAnimation();
       this. heightChange();
+
+
+      //set refs array 
+      this.itemRefs.forEach(this.addTimeline);
     }
   }
 </script>
