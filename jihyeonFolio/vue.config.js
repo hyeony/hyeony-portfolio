@@ -13,7 +13,7 @@ module.exports = defineConfig({
       }
     }
   },
-  publicPath:'/jihyeonPortFolio',
+  // publicPath:'/jihyeonPortFolio',
 })
 
 
