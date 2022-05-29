@@ -1,46 +1,58 @@
 <template>
-    <div class="bin"></div>
-    <div class="bin"></div>
-    <div class="bin"></div>
   <div>
-    <section class="middle">
-      <h1 class="middle-title">IPPP SSSS</h1>
-      <p class="middle-copy">
-        the mall's special offers. <br> the mall's special offers.
-      </p>
-    </section>
-    <section class="bottom">
-      <div class="container">
-        <div class="list">
-          <div class="row">
-            <div class="item">
-              <a href="">
-                <div class="item-img one" :ref="itemImage">
-                <img :src="require('@/assets/imgs/item_00.jpeg')" alt="">
-              </div>
-              </a>
-              <div>item 00</div>
-            </div>
-            <div class="item">
-              <a href="">
-                <div class="item-img two" :ref="itemImage">
-                  <img :src="require('@/assets/imgs/item_01.jpeg')" alt="">
-                </div>
-              </a>
-              <div>item 01</div>
-            </div>
-            <div class="item">
-              <a href="">
-                <div class="item-img three" :ref="itemImage">
-                <img :src="require('@/assets/imgs/item_00.jpeg')" alt="">
-              </div>
-              </a>
-              <div>item 03</div>
-            </div>
+    <section class="intro">
+      <div class="intro-wrap">
+        <div class="container">
+          <div class="title">
+            Web UI Development,<br>
+            Publisher.
           </div>
+          <p>안녕하세요 웹퍼블리셔 김지현입니다.<br> UI개발 외 UI,UX, 디자인에도 관심이 많습니다</p>
         </div>
       </div>
     </section>
+    <div class="projects">
+      <section class="middle">
+        <h1 class="middle-title">IPPP SSSS</h1>
+        <p class="middle-copy">
+          the mall's special offers. <br> the mall's special offers.
+        </p>
+      </section>
+      <section class="bottom">
+        <div class="container">
+          <!-- list -->
+          <div class="list">
+            <div class="row">
+              <div class="item">
+                <a href="">
+                  <div class="item-img one" :ref="itemImage">
+                  <img :src="require('@/assets/imgs/item_00.jpeg')" alt="">
+                </div>
+                </a>
+                <div>item 00</div>
+              </div>
+              <div class="item">
+                <a href="">
+                  <div class="item-img two" :ref="itemImage">
+                    <img :src="require('@/assets/imgs/item_01.jpeg')" alt="">
+                  </div>
+                </a>
+                <div>item 01</div>
+              </div>
+              <div class="item">
+                <a href="">
+                  <div class="item-img three" :ref="itemImage">
+                  <img :src="require('@/assets/imgs/item_00.jpeg')" alt="">
+                </div>
+                </a>
+                <div>item 03</div>
+              </div>
+            </div>
+          </div>
+          <!-- /list -->
+        </div>
+      </section>
+    </div>
     <div class="bin"></div>
     <div class="bin"></div>
     <div class="bin"></div>
@@ -82,11 +94,22 @@
       scrollAnimation(){
         gsap.timeline({
           scrollTrigger: {
+            trigger: ".intro",
+            start: "top top",
+            scrub: true,
+            markers: true,
+          }
+        })
+        .to(".intro-wrap",{ y:"100%", ease: "none"})
+
+
+        gsap.timeline({
+          scrollTrigger: {
             trigger: ".middle",
             start: "80% center",
             endTrigger: ".bottom",
             end: "+=700px",
-            markers: true,
+            // markers: true,
             scrub: true,
             pin: true,
             pinSpacing: false
