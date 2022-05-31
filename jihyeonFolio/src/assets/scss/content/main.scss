@@ -1,24 +1,35 @@
+section {
+  visibility: hidden;
+}
+
+section.is-active {
+  background-color: #fffefc;
+  transition: background-color 0.3s linear;
+}
+
 .intro {
   position: relative;
   padding-bottom: 80px;
-  background-color: antiquewhite;
+
 
   &-wrap {
     padding-top: 180px;
+    background-color: antiquewhite;
     will-change: transform;
+    transition: 0.2s background-color;
 
     .container {
-      padding-bottom: 100px;
+      padding-bottom: 120px;
     }
 
     .title {
-      padding-bottom: 180px;
+      padding-bottom: 200px;
       font-size: 4.7333em;
       font-weight: bold;
 
       +p {
         font-size: 16px;
-        color: #ccc;
+        color: #000;
       }
     }
   }
@@ -31,6 +42,7 @@
 }
 .middle {
   padding-top: 40vh;
+  padding-bottom: 20vh;
 
   &-title {
     padding: 0 80px;
@@ -77,9 +89,9 @@
 }
 
 .item {
-  width: calc((100% - 260px) / 2);
+  width: calc((100% - 160px) / 2);
   height: fit-content;
-  margin-left: 260px;
+  margin-left: 160px;
   overflow: hidden;
 
   &:nth-of-type(2n+2) {
@@ -117,6 +129,15 @@
       transition: all 0.5s cubic-bezier(0.75, 0, 0.125, 1);
     }
   }
+
+  .name {
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+
+  .copy {
+    color: gray
+  }
 }
 
 @media (max-width:768px) {
@@ -129,4 +150,53 @@
       margin: 0 auto 400px;
     }
   }
+}
+
+.resume {
+  display: flex;
+  width: 100%;
+  margin: 120px auto 0;
+  padding: 80px 0;
+
+  .container {
+    justify-content: flex-start;
+    display: flex;
+    width: 100%;
+  }
+}
+
+.btn-resume-down {
+  position: relative;
+  min-width: 400px;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #000;
+  padding: 8px 12px;
+  text-decoration: none;
+
+  &:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ccc;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover {
+    &:after {
+      transform: scaleX(0.8);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+footer{ 
+  height: 20vh;
+  padding: 60px 0;
+  background-color: #fffefc;
 }
