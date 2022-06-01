@@ -4,8 +4,8 @@
       <div class="intro-wrap">
         <div class="container">
           <div class="title">
-            Web UI Development,<br>
-            Publisher.
+            <span class="typo">UI Development</span>
+
           </div>
           <p>안녕하세요 웹퍼블리셔 김지현입니다.<br> UI개발 외 UI,UX, 디자인에도 관심이 많습니다.<br> 현재 포트폴리오 리뉴얼작업중입니다 :)</p>
         </div>
@@ -25,7 +25,7 @@
             <div class="row">
               <div class="item">
                 <a href="#!">
-                  <div class="item-img one" :ref="itemImage">
+                  <div class="item-img" :ref="itemImage">
                   <img :src="require('@/assets/imgs/hds.png')" alt="">
                 </div>
                 </a>
@@ -34,7 +34,7 @@
               </div>
               <div class="item">
                 <a target="_blank" href="https://sandbox.fintech.or.kr/">
-                  <div class="item-img two" :ref="itemImage">
+                  <div class="item-img" :ref="itemImage">
                     <img :src="require('@/assets/imgs/sandbox.png')" alt="">
                   </div>
                 </a>
@@ -43,21 +43,21 @@
               </div>
               <div class="item">
                 <a target="_blank" href="https://uxstudio.sktelecom.com/">
-                  <div class="item-img three" :ref="itemImage">
+                  <div class="item-img" :ref="itemImage">
                   <img :src="require('@/assets/imgs/studio.png')" alt="">
                 </div>
                 </a>
                 <div class="name">UX Studio</div>
                 <p class="copy">부트스트랩을 이용하여 컴포넌트를 제작하는 업무를 진행했습니다.</p>
               </div>
-              <div class="item">
-                <a target="_blank" href="https://uxstudio.sktelecom.com/">
-                  <div class="item-img four" :ref="itemImage">
+             <div class="item">
+                <a target="_blank" href="">
+                  <div class="item-img" :ref="itemImage">
                   <img :src="require('@/assets/imgs/studio.png')" alt="">
                 </div>
                 </a>
-                <div class="name">~ studying</div>
-                <p class="copy">notion에 스터디내용을 정리하며 성장을 위해 노력하고있습니다</p>
+                <div class="name">Samsung SDS 다국어 홈페이지 운영</div>
+                <p class="copy">웹접근성 갱신 및 다국어 홈페이지 운영 프로젝트를 2년동안 진행했습니다.</p>
               </div>
             </div>
           </div>
@@ -113,7 +113,6 @@
             trigger: ".intro",
             start: "top top",
             scrub: true,
-            // markers: true,
           }
         })
         .to(".intro-wrap",{ y:"100%", ease: "none", backgroundColor: '#fff'})
@@ -125,7 +124,6 @@
             start: "80% center",
             endTrigger: ".bottom",
             end: "+=700px",
-            // markers: true,
             scrub: true,
             pin: true,
             pinSpacing: false
@@ -133,51 +131,6 @@
         })
         .to(".middle-title",{ opacity: "0" })
         .to(".middle-copy",{ opacity: "0" })
-
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: ".item-img.one",
-            start: "top bottom",
-            end:"bottom center",
-            scrub: true,
-            // markers: true,
-          }
-        })
-        .to(".item-img.one",{ y:"0", ease: "none"})
-
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: ".item-img.two",
-            start: "top bottom",
-            end:"bottom center",
-            scrub: true,
-            // markers: true,
-          }
-        })
-        .to(".item-img.two",{ y:"0", ease: "none"})
-
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: ".item-img.three",
-            start: "top bottom",
-            end:"bottom center",
-            scrub: true,
-            // markers: true,
-          }
-        })
-        .to(".item-img.three",{ y:"0", ease: "none"})
-
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: ".item-img.four",
-            start: "top bottom",
-            end:"bottom center",
-            scrub: true,
-            // markers: true,
-          }
-        })
-        .to(".item-img.four",{ y:"0", ease: "none"})
-
 
       },
 
@@ -192,10 +145,39 @@
       this.scrollAnimation();
       this. heightChange();
 
-      const sections = document.querySelectorAll('section');
-       const cards = document.querySelectorAll('.item-img');
-       console.log(cards);
+      // gsap.to(
+      //   {
+         
+      //   }
+      // )
 
+    // const tl = gsap.TimelineLite();
+    // tl.to(".tp3", 2.3, {strokeDashoffset:"0"},"-=1.5");
+    // tl.to(".tp3", 0.2, {fillOpacity:1}, "-=2");
+    // tl.to(".tp4", 2.3, {strokeDashoffset:"0"}, "-=1.3");
+    // tl.to(".tp4", 0.2, {fillOpacity:1}, "-=1.6");
+
+
+      var containers = gsap.utils.toArray('.container');
+      containers.forEach(function (container) {
+        gsap.to(
+          container.querySelectorAll(".item-img"),
+          {
+            y: 0,
+            stagger: 0.3,
+            scrollTrigger: {
+              trigger: container,
+              scrub: true,
+              start: "top bottom",
+              end: "bottom center",
+              immediateRender: false,
+              // markers: true
+            }
+          }
+        );
+      });
+    
+      const sections = document.querySelectorAll('section');
       sections.forEach((section, index) => {
         gsap.to(section, {autoAlpha: 1,
           scrollTrigger: {
