@@ -1,16 +1,7 @@
 <template>
   <div>
-    <section class="intro">
-      <div class="intro-wrap">
-        <div class="container">
-          <div class="title">
-            <span class="typo">UI Development</span>
+    <Intro />
 
-          </div>
-          <p>안녕하세요 웹퍼블리셔 김지현입니다.<br> UI개발 외 UI,UX, 디자인에도 관심이 많습니다.<br> 현재 포트폴리오 리뉴얼작업중입니다 :)</p>
-        </div>
-      </div>
-    </section>
     <div class="projects">
       <section class="middle">
         <h1 class="middle-title">Project List</h1>
@@ -53,7 +44,7 @@
              <div class="item">
                 <a target="_blank" href="">
                   <div class="item-img" :ref="itemImage">
-                  <img :src="require('@/assets/imgs/studio.png')" alt="">
+                  <img :src="require('@/assets/imgs/sds.png')" alt="">
                 </div>
                 </a>
                 <div class="name">Samsung SDS 다국어 홈페이지 운영</div>
@@ -82,14 +73,18 @@
   import { gsap } from "gsap"
   import { ScrollTrigger, ScrollToPlugin, MotionPathPlugin } from "gsap/all"
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin)
+  import Intro from "../src/section/intro.vue"
+  
+
 
 
 
   export default {
     name: 'portFolio',
     components: {
+    Intro,
 
-    },
+},
     data() {
       return {
        itemRefs : [],

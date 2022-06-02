@@ -9,29 +9,62 @@ section.is-active {
 
 .intro {
   position: relative;
+  width: 100%;
+  height: 100vh;
   padding-bottom: 80px;
 
 
   &-wrap {
+    height: 100%;
     padding-top: 180px;
-    background-color: antiquewhite;
+    background:  linear-gradient(90deg,#fffff0,#fff);
     will-change: transform;
     transition: 0.2s background-color;
 
     .container {
+      position: relative;
+      padding-left: 120px;
       padding-bottom: 120px;
     }
 
     .title {
-      padding-bottom: 200px;
+      display: inline-block;
+      padding: 60px 0 70px;
       font-size: 4.7333em;
-      font-weight: bold;
+      overflow: hidden;
+      font-family : 'Casual-Regular';
 
-      +p {
-        font-size: 16px;
-        color: #000;
+      &-typo {
+        overflow: hidden;
       }
     }
+
+    .sub {
+      font-size: 1.2em;
+      font-family : 'NanumBarunGothic-YetHangul';
+    }
+
+    .sub-copy {
+      max-width: 60%;
+      padding-left: 17%;
+      font-size: 1.25em;
+      line-height: 1.999rem;
+      overflow: hidden;
+      font-family : 'NanumBarunGothic-YetHangul';
+
+      .all {
+        overflow: hidden;
+        .three {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &-img {
+    position: absolute;
+    right: 10em;
+    top: 10em;
   }
 }
 
@@ -40,6 +73,7 @@ section.is-active {
   z-index: 2;
   background-color: #fff;
 }
+
 .middle {
   padding-top: 40vh;
   padding-bottom: 20vh;
@@ -47,6 +81,8 @@ section.is-active {
   &-title {
     padding: 0 80px;
     font-size: 8em;
+    font-weight: normal;
+    font-family : 'Casual-Regular';
   }
 
   p {
